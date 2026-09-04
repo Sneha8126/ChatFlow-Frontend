@@ -37,7 +37,7 @@ export default function ChatWindow({ onBack, onOpenProfile }) {
   };
 
   return (
-    <div className="flex flex-col h-full min-h-0 bg-surface-soft">
+    <div className="chat-window flex flex-col h-full min-h-0">
       <ChatHeader
         otherUser={activeConversation.otherUser}
         onBack={onBack}

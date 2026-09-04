@@ -33,7 +33,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="h-screen flex overflow-hidden bg-white">
+    <div className="chat-shell h-screen flex overflow-hidden">
       <Sidebar
         conversations={conversations}
         loadingConversations={loadingConversations}
@@ -46,7 +46,7 @@ export default function Chat() {
         onOpenSettings={() => setShowSettings(true)}
       />
 
-      <main className="flex-1 flex flex-col min-w-0 relative">
+      <main className="chat-main flex-1 flex flex-col min-w-0 relative">
         {/* Mobile top bar shown only when no conversation is open */}
         {!activeConversation && (
           <div className="lg:hidden flex items-center gap-3 px-4 py-3 border-b border-surface-border">

@@ -94,9 +94,9 @@ export default function SettingsPanel({ onClose }) {
   return (
     <div className="fixed inset-0 z-[90] flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm animate-fadeIn" onClick={onClose} />
-      <div className="relative bg-white rounded-2xl shadow-popover w-full max-w-2xl h-[560px] max-h-[85vh] flex overflow-hidden animate-bounceIn">
+      <div className="settings-shell relative bg-white rounded-2xl shadow-popover w-full max-w-2xl h-[560px] max-h-[85vh] flex overflow-hidden animate-bounceIn">
         {/* Sidebar */}
-        <div className="w-44 shrink-0 border-r border-surface-border bg-surface-soft py-4 hidden sm:flex flex-col">
+        <div className="settings-nav w-44 shrink-0 border-r border-surface-border bg-surface-soft py-4 hidden sm:flex flex-col">
           <h2 className="text-sm font-bold text-gray-900 px-4 mb-3">Settings</h2>
           {SECTIONS.map((s) => (
             <button
@@ -116,7 +116,7 @@ export default function SettingsPanel({ onClose }) {
 
         {/* Content */}
         <div className="flex-1 flex flex-col min-w-0">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-surface-border">
+          <div className="settings-content-header flex items-center justify-between px-6 py-4 border-b border-surface-border">
             <h3 className="text-base font-semibold text-gray-900 capitalize">{activeSection}</h3>
             <button
               onClick={onClose}

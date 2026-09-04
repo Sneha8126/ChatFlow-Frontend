@@ -10,7 +10,7 @@ export default function ChatHeader({ otherUser, onBack, onSearchMessages, onOpen
   const online = isUserOnline(otherUser?._id) || otherUser?.isOnline;
 
   return (
-    <div className="flex items-center gap-3 px-4 lg:px-6 py-3 border-b border-surface-border bg-white/90 backdrop-blur sticky top-0 z-10">
+    <div className="chat-header flex items-center gap-3 px-4 lg:px-6 py-3 sticky top-0 z-10">
       <button
         onClick={onBack}
         className="lg:hidden p-1.5 -ml-1.5 text-gray-500 hover:text-gray-800 rounded-lg hover:bg-surface-muted transition-colors"
@@ -19,7 +19,7 @@ export default function ChatHeader({ otherUser, onBack, onSearchMessages, onOpen
         <ArrowLeft className="w-5 h-5" />
       </button>
 
-      <button className="flex items-center gap-3 min-w-0 flex-1 text-left" onClick={onOpenProfile}>
+      <button className="chat-header-avatar flex items-center gap-3 min-w-0 flex-1 text-left" onClick={onOpenProfile}>
         <UserAvatar user={{ ...otherUser, isOnline: online }} size="sm" showOnline />
         <div className="min-w-0">
           <p className="text-sm font-semibold text-gray-900 truncate">{otherUser?.name}</p>
@@ -39,7 +39,7 @@ export default function ChatHeader({ otherUser, onBack, onSearchMessages, onOpen
 
       <button
         onClick={onSearchMessages}
-        className="p-2 text-gray-400 hover:text-gray-700 hover:bg-surface-muted rounded-lg transition-colors"
+        className="chat-header-actions p-2 text-gray-400 hover:text-gray-700 hover:bg-surface-muted rounded-lg transition-colors"
         aria-label="Search messages"
       >
         <Search className="w-[18px] h-[18px]" />
@@ -48,7 +48,7 @@ export default function ChatHeader({ otherUser, onBack, onSearchMessages, onOpen
       <div className="relative">
         <button
           onClick={() => setMenuOpen((v) => !v)}
-          className="p-2 text-gray-400 hover:text-gray-700 hover:bg-surface-muted rounded-lg transition-colors"
+          className="chat-header-actions p-2 text-gray-400 hover:text-gray-700 hover:bg-surface-muted rounded-lg transition-colors"
           aria-label="More options"
         >
           <MoreVertical className="w-[18px] h-[18px]" />

@@ -39,8 +39,8 @@ export default function ProfileModal({ user: viewedUser, onClose }) {
   return (
     <div className="fixed inset-0 z-[90] flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm animate-fadeIn" onClick={onClose} />
-      <div className="relative bg-white rounded-2xl shadow-popover w-full max-w-sm animate-bounceIn overflow-hidden">
-        <div className="h-20 bg-gradient-to-r from-primary-500 to-primary-700 relative">
+      <div className="modal-card relative bg-white rounded-2xl shadow-popover w-full max-w-sm animate-bounceIn overflow-hidden">
+        <div className="modal-banner h-20 bg-gradient-to-r from-primary-500 to-primary-700 relative">
           <button
             onClick={onClose}
             className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors"

@@ -65,12 +65,12 @@ export default function Sidebar({
         }`}
       >
         {/* Header / logo */}
-        <div className="flex items-center justify-between px-4 py-4 border-b border-surface-border">
+        <div className="chat-brand flex items-center justify-between px-4 py-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
+            <div className="chat-brand-icon w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
               <MessageCircle className="w-[18px] h-[18px] text-white" strokeWidth={2.2} />
             </div>
-            <span className="font-bold text-gray-900 text-lg tracking-tight">ChatFlow</span>
+            <span className="chat-brand-name font-bold text-gray-900 text-lg tracking-tight">ChatFlow</span>
           </div>
           <button
             onClick={onClose}
@@ -82,12 +82,12 @@ export default function Sidebar({
         </div>
 
         {/* Search */}
-        <div className="px-4 pt-3 pb-2">
+        <div className="chat-search px-4 pt-3 pb-2">
           <SearchBar placeholder="Search people..." onSearch={handleSearch} />
         </div>
 
         {/* Body: search results or conversation list */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="chat-list flex-1 overflow-y-auto">
           {searchResults !== null ? (
             <div className="pt-1">
               <p className="px-4 pb-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
@@ -132,7 +132,7 @@ export default function Sidebar({
         </div>
 
         {/* Footer: profile / settings / logout */}
-        <div className="border-t border-surface-border px-3 py-3 flex items-center gap-2">
+        <div className="chat-profile-footer border-t px-3 py-3 flex items-center gap-2">
           <button
             onClick={onOpenProfile}
             className="flex items-center gap-2.5 flex-1 min-w-0 rounded-xl px-2 py-1.5 hover:bg-surface-muted transition-colors"

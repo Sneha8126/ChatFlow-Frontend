@@ -119,7 +119,7 @@ export default function MessageInput({ onSend, onTypingStart, onTypingStop, disa
   const canSend = (text.trim().length > 0 || pendingFile) && !sending;
 
   return (
-    <div className="border-t border-surface-border bg-white px-3 lg:px-6 py-3">
+    <div className="chat-composer border-t px-3 lg:px-6 py-3">
       {pendingFile && (
         <PendingAttachment
           file={pendingFile}
@@ -146,7 +146,7 @@ export default function MessageInput({ onSend, onTypingStart, onTypingStop, disa
         </button>
 
         <div className="flex-1 relative">
-          <div className="flex items-end bg-surface-muted rounded-2xl px-3 py-1.5 min-h-[44px]">
+          <div className="chat-composer-box flex items-end rounded-2xl px-3 py-1.5 min-h-[44px]">
             <textarea
               ref={textareaRef}
               rows={1}
@@ -184,7 +184,7 @@ export default function MessageInput({ onSend, onTypingStart, onTypingStop, disa
         <button
           onClick={handleSend}
           disabled={!canSend || disabled}
-          className={`p-2.5 rounded-xl transition-all shrink-0 ${
+          className={`chat-send p-2.5 rounded-xl transition-all shrink-0 ${
             canSend && !disabled
               ? 'bg-primary-600 text-white hover:bg-primary-700 active:scale-95'
               : 'bg-surface-muted text-gray-300 cursor-not-allowed'

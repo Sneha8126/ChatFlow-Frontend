@@ -40,17 +40,17 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-surface-soft px-4">
-      <div className="w-full max-w-sm">
+    <div className="auth-shell flex items-center justify-center">
+      <div className="auth-wrap">
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 rounded-xl bg-primary-600 flex items-center justify-center mb-3">
+          <div className="auth-brand-icon w-12 h-12 rounded-xl bg-primary-600 flex items-center justify-center mb-3">
             <MessageCircle className="w-6 h-6 text-white" strokeWidth={2.2} />
           </div>
           <h1 className="text-xl font-bold text-gray-900">ChatFlow</h1>
           <p className="text-sm text-gray-400 mt-1">Connect. Chat. Stay in sync.</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-card border border-surface-border p-7">
+        <div className="auth-card bg-white rounded-2xl shadow-card border border-surface-border p-7">
           <h2 className="text-lg font-semibold text-gray-900 mb-1">Welcome back</h2>
           <p className="text-sm text-gray-400 mb-6">Log in to continue to your conversations.</p>
 
@@ -118,7 +118,7 @@ export default function Login() {
         </div>
 
         <p className="text-xs text-gray-400 text-center mt-6">
-          Demo: try <span className="font-medium">abc@chatflow.demo</span> / password123 (after running the seed script)
+          Demo: try <span className="font-medium">rahul@chatflow.demo</span> / password123 (after running the seed script)
         </p>
       </div>
     </div>

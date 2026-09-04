@@ -38,7 +38,7 @@ export default function MessageBubble({
 
   return (
     <div
-      className={`group flex gap-2 px-4 lg:px-6 ${isOwn ? 'justify-end' : 'justify-start'} ${
+      className={`message-row group flex gap-2 px-4 lg:px-6 ${isOwn ? 'justify-end' : 'justify-start'} ${
         highlighted ? 'bg-amber-50 -mx-2 px-6 rounded-lg' : ''
       }`}
       onMouseEnter={() => setShowActions(true)}
@@ -57,7 +57,7 @@ export default function MessageBubble({
           <div className="relative">
             <button
               onClick={() => setShowReactionPicker((v) => !v)}
-              className="p-1.5 text-gray-400 hover:text-gray-700 hover:bg-white rounded-lg transition-colors"
+              className="message-actions p-1.5 text-gray-400 hover:text-gray-700 hover:bg-white rounded-lg transition-colors"
               aria-label="React to message"
             >
               <SmilePlus className="w-4 h-4" />
@@ -84,7 +84,7 @@ export default function MessageBubble({
           {message.content && !message.isDeleted && (
             <button
               onClick={handleCopy}
-              className="p-1.5 text-gray-400 hover:text-gray-700 hover:bg-white rounded-lg transition-colors"
+              className="message-actions p-1.5 text-gray-400 hover:text-gray-700 hover:bg-white rounded-lg transition-colors"
               aria-label="Copy message"
             >
               <Copy className="w-4 h-4" />
@@ -105,12 +105,12 @@ export default function MessageBubble({
         {/* Bubble */}
         <div>
           <div
-            className={`rounded-2xl px-4 py-2.5 shadow-soft ${
+            className={`rounded-2xl px-4 py-2.5 ${
               message.isDeleted
                 ? 'bg-gray-100 text-gray-400 italic'
                 : isOwn
-                ? 'bg-primary-600 text-white rounded-br-md'
-                : 'bg-white text-gray-800 border border-surface-border rounded-bl-md'
+                ? 'message-bubble-own text-white rounded-br-md'
+                : 'message-bubble-other text-gray-800 rounded-bl-md'
             }`}
           >
             {message.attachment && !message.isDeleted && (
