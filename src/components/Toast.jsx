@@ -10,7 +10,7 @@ const iconMap = {
 
 export default function Toast({ message, type = 'info', title, onClose }) {
   return (
-    <div className="pointer-events-auto animate-slideInRight bg-white border border-surface-border shadow-popover rounded-xl px-4 py-3 flex items-start gap-3 min-w-[280px] max-w-sm">
+    <div className={`toast-card toast-${type} pointer-events-auto animate-slideInRight bg-white border border-surface-border shadow-popover rounded-xl px-4 py-3 flex items-start gap-3 min-w-[280px] max-w-sm`}>
       <div className="mt-0.5">{iconMap[type] || iconMap.info}</div>
       <div className="flex-1 min-w-0">
         {title && <p className="text-sm font-semibold text-gray-900">{title}</p>}

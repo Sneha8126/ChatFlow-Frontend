@@ -15,16 +15,16 @@ export default function UserAvatar({ user, size = 'md', showOnline = false, clas
   const name = user?.name || '?';
 
   return (
-    <div className={`relative shrink-0 ${className}`}>
+    <div className={`user-avatar relative shrink-0 ${className}`}>
       {user?.avatar ? (
         <img
           src={user.avatar}
           alt={name}
-          className={`${dimensions} rounded-full object-cover ring-1 ring-black/5`}
+          className={`${dimensions} rounded-full object-cover ring-2 ring-white avatar-ring`}
         />
       ) : (
         <div
-          className={`${dimensions} rounded-full flex items-center justify-center font-semibold ring-1 ring-black/5 ${getAvatarColor(
+          className={`${dimensions} rounded-full flex items-center justify-center font-semibold ring-2 ring-white avatar-ring ${getAvatarColor(
             name
           )}`}
         >

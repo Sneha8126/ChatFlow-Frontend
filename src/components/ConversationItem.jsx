@@ -31,8 +31,8 @@ export default function ConversationItem({ conversation, isActive, onClick, curr
   return (
     <button
       onClick={onClick}
-      className={`w-full flex items-center gap-3 px-4 py-3 transition-colors text-left group ${
-        isActive ? 'bg-primary-50' : 'hover:bg-surface-muted'
+      className={`conversation-item w-full flex items-center gap-3 px-4 py-3 transition-colors text-left group ${
+        isActive ? 'conversation-item-active bg-primary-50' : 'hover:bg-surface-muted'
       }`}
     >
       <UserAvatar user={{ ...other, isOnline: online }} size="md" showOnline />
@@ -74,7 +74,7 @@ export default function ConversationItem({ conversation, isActive, onClick, curr
             <span className="truncate">{preview}</span>
           </p>
           {conversation.unreadCount > 0 && (
-            <span className="shrink-0 bg-primary-600 text-white text-[10px] font-semibold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center animate-bounceIn">
+            <span className="unread-badge shrink-0 bg-primary-600 text-white text-[10px] font-semibold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center animate-bounceIn">
               {conversation.unreadCount > 99 ? '99+' : conversation.unreadCount}
             </span>
           )}

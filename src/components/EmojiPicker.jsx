@@ -37,7 +37,7 @@ export default function EmojiPicker({ onSelect, onClose, anchorClassName = '' })
   return (
     <div
       ref={ref}
-      className={`absolute z-50 bg-white border border-surface-border rounded-2xl shadow-popover p-3 w-72 max-h-80 overflow-y-auto animate-slideUp ${anchorClassName}`}
+      className={`emoji-picker absolute z-50 bg-white border border-surface-border rounded-2xl shadow-popover p-3 w-72 max-w-[calc(100vw-2rem)] max-h-80 overflow-y-auto animate-slideUp ${anchorClassName}`}
     >
       {EMOJI_CATEGORIES.map((cat) => (
         <div key={cat.label} className="mb-3 last:mb-0">
@@ -50,7 +50,7 @@ export default function EmojiPicker({ onSelect, onClose, anchorClassName = '' })
                 key={emoji}
                 type="button"
                 onClick={() => onSelect(emoji)}
-                className="text-lg leading-none w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-muted transition-colors"
+                className="emoji-btn text-lg leading-none w-8 h-8 flex items-center justify-center rounded-lg transition-colors"
               >
                 {emoji}
               </button>

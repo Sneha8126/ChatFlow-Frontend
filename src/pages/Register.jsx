@@ -73,7 +73,7 @@ export default function Register() {
           <div className="auth-brand-icon w-12 h-12 rounded-xl bg-primary-600 flex items-center justify-center mb-3">
             <MessageCircle className="w-6 h-6 text-white" strokeWidth={2.2} />
           </div>
-          <h1 className="text-xl font-bold text-gray-900">ChatFlow</h1>
+          <h1 className="auth-brand-name text-xl font-bold text-gray-900">ChatFlow</h1>
           <p className="text-sm text-gray-400 mt-1">Connect. Chat. Stay in sync.</p>
         </div>
 
@@ -91,10 +91,10 @@ export default function Register() {
                   value={form[f.key]}
                   onChange={(e) => setForm({ ...form, [f.key]: e.target.value })}
                   placeholder={f.placeholder}
-                  className={`w-full border rounded-xl px-3.5 py-2.5 text-sm transition-colors focus:outline-none ${
+                  className={`auth-input w-full border rounded-xl px-3.5 py-2.5 text-sm transition-colors focus:outline-none ${
                     errors[f.key]
                       ? 'border-rose-300 focus:border-rose-400'
-                      : 'border-surface-border focus:border-primary-400'
+                      : 'border-surface-border'
                   }`}
                 />
                 {errors[f.key] && <p className="text-xs text-rose-500 mt-1">{errors[f.key]}</p>}
@@ -110,10 +110,10 @@ export default function Register() {
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   placeholder="At least 6 characters"
-                  className={`w-full border rounded-xl px-3.5 py-2.5 pr-10 text-sm transition-colors focus:outline-none ${
+                  className={`auth-input w-full border rounded-xl px-3.5 py-2.5 pr-10 text-sm transition-colors focus:outline-none ${
                     errors.password
                       ? 'border-rose-300 focus:border-rose-400'
-                      : 'border-surface-border focus:border-primary-400'
+                      : 'border-surface-border'
                   }`}
                 />
                 <button
@@ -136,10 +136,10 @@ export default function Register() {
                 value={form.confirmPassword}
                 onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
                 placeholder="Re-enter your password"
-                className={`w-full border rounded-xl px-3.5 py-2.5 text-sm transition-colors focus:outline-none ${
+                className={`auth-input w-full border rounded-xl px-3.5 py-2.5 text-sm transition-colors focus:outline-none ${
                   errors.confirmPassword
                     ? 'border-rose-300 focus:border-rose-400'
-                    : 'border-surface-border focus:border-primary-400'
+                    : 'border-surface-border'
                 }`}
               />
               {errors.confirmPassword && <p className="text-xs text-rose-500 mt-1">{errors.confirmPassword}</p>}
@@ -148,7 +148,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-xl py-2.5 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+              className="auth-submit w-full text-white text-sm font-medium rounded-xl py-2.5 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
               Create account

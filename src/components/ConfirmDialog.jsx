@@ -19,7 +19,7 @@ export default function ConfirmDialog({
         className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm animate-fadeIn"
         onClick={onCancel}
       />
-      <div className="relative bg-white rounded-2xl shadow-popover w-full max-w-sm p-6 animate-bounceIn">
+      <div className="modal-card relative bg-white rounded-2xl shadow-popover w-full max-w-sm p-6 animate-bounceIn">
         <div
           className={`w-11 h-11 rounded-full flex items-center justify-center mb-4 ${
             danger ? 'bg-rose-50' : 'bg-primary-50'

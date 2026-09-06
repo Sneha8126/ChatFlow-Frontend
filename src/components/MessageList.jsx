@@ -76,7 +76,7 @@ export default function MessageList({
   }
 
   return (
-    <div className="relative flex-1 min-h-0">
+    <div className="relative flex-1 min-h-0 message-list-shell">
       <div
         ref={containerRef}
         onScroll={handleScroll}
@@ -101,7 +101,7 @@ export default function MessageList({
             <React.Fragment key={msg._id}>
               {showDateSeparator && (
                 <div className="flex items-center justify-center my-3">
-                  <span className="text-[11px] font-medium text-gray-400 bg-surface-muted px-3 py-1 rounded-full">
+                  <span className="date-separator-chip text-[11px] font-medium text-gray-500 px-3 py-1 rounded-full">
                     {formatDateSeparator(msg.createdAt)}
                   </span>
                 </div>
@@ -129,7 +129,7 @@ export default function MessageList({
       {showScrollButton && (
         <button
           onClick={() => scrollToBottom()}
-          className="absolute bottom-4 right-4 lg:right-6 w-9 h-9 bg-white border border-surface-border shadow-card rounded-full flex items-center justify-center text-gray-500 hover:text-primary-600 transition-colors animate-bounceIn"
+          className="scroll-bottom-btn absolute bottom-4 right-4 lg:right-6 w-9 h-9 bg-white border border-surface-border shadow-card rounded-full flex items-center justify-center text-gray-500 transition-colors animate-bounceIn"
           aria-label="Scroll to latest message"
         >
           <ChevronDown className="w-5 h-5" />

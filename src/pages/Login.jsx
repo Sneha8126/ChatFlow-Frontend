@@ -46,7 +46,7 @@ export default function Login() {
           <div className="auth-brand-icon w-12 h-12 rounded-xl bg-primary-600 flex items-center justify-center mb-3">
             <MessageCircle className="w-6 h-6 text-white" strokeWidth={2.2} />
           </div>
-          <h1 className="text-xl font-bold text-gray-900">ChatFlow</h1>
+          <h1 className="auth-brand-name text-xl font-bold text-gray-900">ChatFlow</h1>
           <p className="text-sm text-gray-400 mt-1">Connect. Chat. Stay in sync.</p>
         </div>
 
@@ -63,10 +63,10 @@ export default function Login() {
                 value={form.identifier}
                 onChange={(e) => setForm({ ...form, identifier: e.target.value })}
                 placeholder="you@example.com"
-                className={`w-full border rounded-xl px-3.5 py-2.5 text-sm transition-colors focus:outline-none ${
+                className={`auth-input w-full border rounded-xl px-3.5 py-2.5 text-sm transition-colors focus:outline-none ${
                   errors.identifier
                     ? 'border-rose-300 focus:border-rose-400'
-                    : 'border-surface-border focus:border-primary-400'
+                    : 'border-surface-border'
                 }`}
               />
               {errors.identifier && <p className="text-xs text-rose-500 mt-1">{errors.identifier}</p>}
@@ -81,10 +81,10 @@ export default function Login() {
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   placeholder="••••••••"
-                  className={`w-full border rounded-xl px-3.5 py-2.5 pr-10 text-sm transition-colors focus:outline-none ${
+                  className={`auth-input w-full border rounded-xl px-3.5 py-2.5 pr-10 text-sm transition-colors focus:outline-none ${
                     errors.password
                       ? 'border-rose-300 focus:border-rose-400'
-                      : 'border-surface-border focus:border-primary-400'
+                      : 'border-surface-border'
                   }`}
                 />
                 <button
@@ -102,7 +102,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-xl py-2.5 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+              className="auth-submit w-full text-white text-sm font-medium rounded-xl py-2.5 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
               Log in

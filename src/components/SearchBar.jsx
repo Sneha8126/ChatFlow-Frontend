@@ -20,7 +20,7 @@ export default function SearchBar({ placeholder = 'Search...', onSearch, autoFoc
   };
 
   return (
-    <div className="relative">
+    <div className="search-bar relative">
       <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
       <input
         type="text"
@@ -28,7 +28,7 @@ export default function SearchBar({ placeholder = 'Search...', onSearch, autoFoc
         autoFocus={autoFocus}
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-surface-muted border border-transparent focus:border-primary-300 focus:bg-white rounded-xl pl-9 pr-8 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 transition-colors"
+        className="search-input w-full bg-surface-muted border border-transparent focus:bg-white rounded-xl pl-9 pr-8 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 transition-colors"
       />
       {value && (
         <button
